@@ -52,26 +52,19 @@ class _LoginFormState extends State<LoginForm> {
 
 
       if (userSnapshot.docs.isNotEmpty) {
-        widget.onLoginSuccess(_usernameController.text.trim());
-        // Navigate to home or any other screen after successful login
-      }
-
-      if (userSnapshot.docs.isNotEmpty) {
-        Navigator.pushReplacement(context, 
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(username: _usernameController.text.trim())),
-          );
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Invalid username or password')),
-        );
-      }
-    } catch (e) {
-      print('Error: ${e.toString()}');
+      widget.onLoginSuccess(_usernameController.text.trim());
+      // Navigate to home or any other screen after successful login
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('An unexpected error occured'))
+        SnackBar(content: Text('Invalid username or password')),
       );
     }
+  } catch (e) {
+    print('Error: ${e.toString()}');
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('An unexpected error occured')),
+    );
+  }
   }
 
    Widget build(BuildContext context) {

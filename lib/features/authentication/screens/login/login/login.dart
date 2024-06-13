@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:pangyangjourney/features/authentication/screens/login/login/widgets/login_form.dart';
 import 'package:pangyangjourney/features/authentication/screens/login/login/widgets/login_headers.dart';
+import 'package:pangyangjourney/features/feature/screens/home/home.dart';
 
 
 
@@ -33,7 +34,11 @@ class LoginScreen extends StatelessWidget {
               const TLoginHeader(),
 
               ///Form
-              const TLoginForm(), // Corrected the constructor call
+              LoginForm(onLoginSuccess: (username) {
+                Navigator.pushReplacement(
+                  context, 
+                  MaterialPageRoute(builder: (context) => HomeScreen(username: username),));
+              }), // Corrected the constructor call
 
               ///Divider
               TFormDivider(dividerText: TTexts.orSignInWith.capitalize!),
