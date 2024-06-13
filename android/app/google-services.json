@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "599826163278",
+    "project_id": "pangyangjourney",
+    "storage_bucket": "pangyangjourney.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599826163278:android:f6819962cb00e04864851f",
+        "android_client_info": {
+          "package_name": "com.example.pangyangjourney"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1dGQPZreChpg1-vFiVukMkBRgk0gX4Ks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
